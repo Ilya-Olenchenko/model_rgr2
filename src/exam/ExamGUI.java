@@ -61,7 +61,6 @@ public class ExamGUI extends JFrame{
 
 	private JTextPane jTextPane = null;
 	private JPanel info;
-	private JPanel panel;
 	private JPanel panelPhoto;
 
 	public ExamGUI() throws HeadlessException {
@@ -143,11 +142,11 @@ public class ExamGUI extends JFrame{
 									new java.awt.Color(51, 51, 51)));
 			jPanelModelParameters.setPreferredSize(new Dimension(262, 436));
 			jPanelModelParameters.setMinimumSize(new Dimension(262, 436));
-			jPanelModelParameters.add(getRndBuldo(), null);
-			jPanelModelParameters.add(getRndLoader(), null);
-			jPanelModelParameters.add(getChooseDataNLorry(), null);
+			jPanelModelParameters.add(getStudent_performance(), null);
+			jPanelModelParameters.add(getStudent_assessments(), null);
+			jPanelModelParameters.add(getamount_of_students(), null);
 			jPanelModelParameters.add(getChooseDataBodySize(), null);
-			jPanelModelParameters.add(getRndLorry(), null);
+			jPanelModelParameters.add(getRndQuestion(), null);
 			jPanelModelParameters.add(getChooseDataHeapMaxSize(), null);
 			jPanelModelParameters.add(getChooseDataFinishTime(), null);
 		}
@@ -159,11 +158,11 @@ public class ExamGUI extends JFrame{
 	 * 	
 	 * @return widgets.ChooseRandom	
 	 */
-	public ChooseRandom getRndBuldo() {
+	public ChooseRandom getStudent_performance() {
 		if (rndBuldo == null) {
 			rndBuldo = new ChooseRandom();
 			rndBuldo.setRandom(new Erlang(3,3));
-			rndBuldo.setTitle("Продуктивність бульдозера");
+			rndBuldo.setTitle("Успішність студентів");
 			rndBuldo.setBounds(new Rectangle(3, 21, 231, 52));
 		}
 		return rndBuldo;
@@ -175,11 +174,11 @@ public class ExamGUI extends JFrame{
 	 * 	
 	 * @return widgets.ChooseRandom	
 	 */
-	public ChooseRandom getRndLoader() {
+	public ChooseRandom getStudent_assessments() {
 		if (rndLoader == null) {
 			rndLoader = new ChooseRandom();
 			rndLoader.setRandom(new Norm(1,0.2));
-			rndLoader.setTitle("Продуктивність навантажувача");
+			rndLoader.setTitle("Оцінкі студентів");
 			rndLoader.setBounds(new Rectangle(3, 81, 231, 52));
 		}
 		return rndLoader;
@@ -192,7 +191,7 @@ public class ExamGUI extends JFrame{
 	 * @return widgets.ChooseData	
 	 */
 	
-	public ChooseData getChooseDataNLorry() {
+	public ChooseData getamount_of_students() {
 		if (chooseDataNLorry == null) {
 			chooseDataNLorry = new ChooseData();
 			chooseDataNLorry.setBounds(new Rectangle(3, 200, 231, 53));
@@ -214,8 +213,8 @@ public class ExamGUI extends JFrame{
 		if (chooseDataBodySize == null) {
 			chooseDataBodySize = new ChooseData();
 			chooseDataBodySize.setBounds(new Rectangle(4, 263, 231, 53));
-			chooseDataBodySize.setTitle("Місткість кузову");
-			chooseDataBodySize.setText("2");
+			chooseDataBodySize.setTitle("Студенти що не з'явились на Екзамен");
+			chooseDataBodySize.setText("5");
 		}
 		return chooseDataBodySize;
 	}
@@ -226,12 +225,12 @@ public class ExamGUI extends JFrame{
 	 * 	
 	 * @return widgets.ChooseRandom	
 	 */
-	public ChooseRandom getRndLorry() {
+	public ChooseRandom getRndQuestion() {
 		if (rndLorry == null) {
 			rndLorry = new ChooseRandom();
 			rndLorry.setBounds(new Rectangle(3, 142, 231, 52));
 			rndLorry.setRandom(new Erlang(20, 4));
-			rndLorry.setTitle("Перебування самоскида у дорозі");
+			rndLorry.setTitle("Кількість питань");
 		}
 		return rndLorry;
 	}
@@ -246,8 +245,8 @@ public class ExamGUI extends JFrame{
 		if (chooseDataHeapMaxSize == null) {
 			chooseDataHeapMaxSize = new ChooseData();
 			chooseDataHeapMaxSize.setBounds(new Rectangle(1, 326, 231, 53));
-			chooseDataHeapMaxSize.setTitle("Найбільший розмір купи");
-			chooseDataHeapMaxSize.setText("50");
+			chooseDataHeapMaxSize.setTitle("Час на підготовку студента");
+			chooseDataHeapMaxSize.setText("30");
 
 
 		}
@@ -315,7 +314,9 @@ public class ExamGUI extends JFrame{
 		this.setSize(949, 499);
 		this.setContentPane(getJContentPane());
 		this
-				.setTitle("Дослідження грунтовидобувних робіт шляхом імітаційного моделювання");
+				.setTitle("Моделювання іспиту, \r\n"
+						+ "варіант Examen\r\n"
+						+ "Оленченко Ілля КІт-211");
 	}
 
 	/**
@@ -348,18 +349,10 @@ public class ExamGUI extends JFrame{
 		return jContentPane;
 	}
 
-	// /////////////////////////////////////////////////
-	// ///Реалізація інтерфейсу IBuldoGUI
-	// //////////////////////////////////////////////////
 
 
-	/*
-	 * @see buldo2009.IBuldoGUI Метод повертає стан перемикача управління
-	 *      виведенням протоколу на консоль
-	 */
-	//public Boolean getProtocolToConcole() {
-		//return getJCheckBox().isSelected();
-	//}
+
+
 
 	public Dispatcher getDispatcher() {
 		if (dispatcher == null)
