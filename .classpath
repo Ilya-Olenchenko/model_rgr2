@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/CHNUT/3curs.2sem/Modeling_System/Simulation2022.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/eclipse-workspace/model_rgr2/SimulationAllTest2022.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

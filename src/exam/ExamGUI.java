@@ -51,8 +51,6 @@ public class ExamGUI extends JFrame{
 
 	private ChooseData chooseDataNLorry = null;
 
-	private ChooseData chooseDataBodySize = null;
-
 	private ChooseRandom rndLorry = null;
 
 	private ChooseData chooseDataHeapMaxSize = null;
@@ -145,7 +143,6 @@ public class ExamGUI extends JFrame{
 			jPanelModelParameters.add(getStudent_performance(), null);
 			jPanelModelParameters.add(getStudent_assessments(), null);
 			jPanelModelParameters.add(getamount_of_students(), null);
-			jPanelModelParameters.add(getChooseDataBodySize(), null);
 			jPanelModelParameters.add(getRndQuestion(), null);
 			jPanelModelParameters.add(getChooseDataHeapMaxSize(), null);
 			jPanelModelParameters.add(getChooseDataFinishTime(), null);
@@ -196,27 +193,11 @@ public class ExamGUI extends JFrame{
 			chooseDataNLorry = new ChooseData();
 			chooseDataNLorry.setBounds(new Rectangle(3, 200, 231, 53));
 			chooseDataNLorry.setTitle("Кількість студентів");
-			chooseDataNLorry.setText("20");
+			chooseDataNLorry.setText("15");
 
 
 		}
 		return chooseDataNLorry;
-	}
-
-
-	/**
-	 * This method initializes chooseDataBodySize	
-	 * 	
-	 * @return widgets.ChooseData	
-	 */
-	public ChooseData getChooseDataBodySize() {
-		if (chooseDataBodySize == null) {
-			chooseDataBodySize = new ChooseData();
-			chooseDataBodySize.setBounds(new Rectangle(4, 263, 231, 53));
-			chooseDataBodySize.setTitle("Студенти що не з'явились на Екзамен");
-			chooseDataBodySize.setText("5");
-		}
-		return chooseDataBodySize;
 	}
 
 
@@ -244,9 +225,9 @@ public class ExamGUI extends JFrame{
 	public ChooseData getChooseDataHeapMaxSize() {
 		if (chooseDataHeapMaxSize == null) {
 			chooseDataHeapMaxSize = new ChooseData();
-			chooseDataHeapMaxSize.setBounds(new Rectangle(1, 326, 231, 53));
+			chooseDataHeapMaxSize.setBounds(new Rectangle(3, 263, 231, 53));
 			chooseDataHeapMaxSize.setTitle("Час на підготовку студента");
-			chooseDataHeapMaxSize.setText("30");
+			chooseDataHeapMaxSize.setText("25");
 
 
 		}
@@ -263,7 +244,7 @@ public class ExamGUI extends JFrame{
 	public ChooseData getChooseDataFinishTime() {
 		if (chooseDataFinishTime == null) {
 			chooseDataFinishTime = new ChooseData();
-			chooseDataFinishTime.setBounds(new Rectangle(3, 385, 231, 53));
+			chooseDataFinishTime.setBounds(new Rectangle(3, 326, 231, 53));
 			chooseDataFinishTime.setTitle("Час моделювання");
 			chooseDataFinishTime.setText("500");
 
